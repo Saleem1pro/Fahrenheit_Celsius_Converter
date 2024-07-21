@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fahrenheit Converter</title>
+    <style>
+        .first {
+            width: 500px; /* Largeur du div */
+            height: 150px; /* Hauteur du div */
+            background-color: lightblue; /* Couleur de fond pour la visibilité */
+            text-align: center; 
+            margin: -160px auto 200px;
+            display: flex;
+            flex-direction: column; /* Aligner les éléments de second verticalement */
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 0 15px 15px;
+        }
+        .second {
+            display: flex;
+            flex-direction: column; /* Aligner les éléments du second div verticalement */
+            justify-content: center;
+            align-items: center;
+        }
+        .third {
+            display: flex;
+            flex-direction: row; /* Aligner les éléments du third div horizontalement */
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-top:-50px;
+        }
+        .fourth, .fifth {
+            display: flex;
+            flex-direction: column; /* Aligner les éléments du fourth et fifth div verticalement */
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+        h2{
+            margin: 160px 486px;
+            height: 60px; /* Hauteur du div */
+            width: 500px; /* Largeur du div */
+            background-color: lightblue; /* Couleur de fond pour la visibilité */
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+        button{
+            border-radius: 15px;
+            margin-top:15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fahrenheit to Celsius Converter</h2>
+    <div class="first">
+        <div class="second">
+            <div class="third">
+                <div class="fourth">
+                    <label>°F :</label>
+                    <input id="fahrenheit" placeholder="Fahrenheit" />
+                </div>
+                <div class="fifth">
+                    <label>°C :</label>
+                    <input id="celsius" placeholder="Celsius" readonly />
+                </div>
+            </div>
+            <button onclick="convert()">Convert</button>
+        </div>
+    </div>
+    <script>
+        function convert() {
+            // 1. fetch fahrenheit from input and parse it to an integer
+            const fahrenheit = parseInt(document.getElementById("fahrenheit").value);  
+            
+            // 2. Convert fahrenheit to Celsius
+            const celsius = (fahrenheit - 32) * 0.5556;
+            
+            // 3. Display celsius in input
+            document.getElementById("celsius").value = celsius;
+        }
+    </script>
+</body>
+</html>
